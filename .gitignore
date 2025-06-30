@@ -58,7 +58,8 @@ dkms.conf
 .svn
 
 # VSCode
-.vscode
+.vscode/*
+!.vscode/tasks.json
 
 # Build
 Build/
