@@ -1,16 +1,15 @@
 #!/bin/sh
+make clean
 COMPILER=clang
 MAKE_OPTION=-j
+PROJECT=${1-"HelloWorld"}
 
-make clean
-
-#
-# TARGET
-#
+# Set the target
+# TARGET=FFmpeg
 # TARGET=HelloWorld
-TARGET=Random
+# TARGET=Random
 # TARGET=Test
 
-make COMPILER=$COMPILER $MAKE_OPTION TARGET=$TARGET
-echo "Run $TARGET"
-./Output/$TARGET
+make $MAKE_OPTION TARGET=$PROJECT
+echo "Run $PROJECT"
+./Output/$PROJECT
