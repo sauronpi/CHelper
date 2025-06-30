@@ -1,4 +1,5 @@
 #!/bin/sh
+COMPILER=clang
 MAKE_OPTION=-j
 
 make clean
@@ -10,6 +11,6 @@ make clean
 TARGET=Random
 # TARGET=Test
 
-make $MAKE_OPTION TARGET=$TARGET
+make COMPILER=$COMPILER $MAKE_OPTION TARGET=$TARGET
 echo "Run $TARGET"
 ./Output/$TARGET

@@ -31,7 +31,7 @@ vpath %.c $(sort $(dir $(C_SOURCES)))
 #######################################
 # Compiler
 #######################################
-COMPILER = gcc
+COMPILER ?=gcc
 COMPILER_OPTION = $(C_INCLUDES)
 
 $(TARGET): $(OBJECTS) $(OUTPUT_DIRECTORY)
