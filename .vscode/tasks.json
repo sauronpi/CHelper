@@ -4,13 +4,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "HelloWorld Build",
+            "label": "HelloWorld",
             "type": "shell",
             "command": "./build.sh",
             "args": ["HelloWorld"]
         },
         {
-            "label": "FFmpeg Build",
+            "label": "FFmpeg",
             "type": "shell",
             "command": "./build.sh",
             "args": ["FFmpeg"]
