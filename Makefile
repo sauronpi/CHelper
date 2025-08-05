@@ -5,29 +5,40 @@
 ######################################
 
 TARGET ?= HelloWorld
+ARCH =
+OS = 
  
 #DIRECTORY
-BUILD_DIRECTORY = Build
-OUTPUT_DIRECTORY = Output
-SDK_DIRECTORY = SDK
-LIB_DIRECTORY = Lib
-LIBS = -L$(LIB_DIRECTORY)/libavutil -lavutil
-PROJECT_DIRECTORY = Project
+BUILD_DIRECTORY := Build
+OUTPUT_DIRECTORY := Output
+SDK_DIRECTORY := SDK
+LIBS_DIRECTORY := Libs
+PROJECT_DIRECTORY := Project
 
 C_INCLUDES = 
 C_SOURCES =
 
+# SDK files
 C_INCLUDES += \
 -I $(SDK_DIRECTORY)\
--I $(LIB_DIRECTORY)\
--I $(LIB_DIRECTORY)/libavutil\
 
 C_SOURCES += \
 $(wildcard $(SDK_DIRECTORY)/*.c)
 
+# Libs files
+C_INCLUDES += \
+-I $(LIBS_DIRECTORY)/libavutil
+
+LIBS := -L$(LIBS_DIRECTORY)/libavutil -lavutil
+
+# Project files
+C_INCLUDES += \
+-I $(PROJECT_DIRECTORY)/$(TARGET)
+
 C_SOURCES += \
 $(wildcard $(PROJECT_DIRECTORY)/$(TARGET)/*.c)
 
+# Objects
 OBJECTS = $(addprefix $(BUILD_DIRECTORY)/,$(notdir $(C_SOURCES:.c=.o)))
 
 # make 只在当前目录下寻找文件，源码目录排序后添加到 vpath 给 make 寻找文件
