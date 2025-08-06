@@ -35,7 +35,7 @@ DetectOperatingSystem() {
             fi
             ;;
         Darwin*)
-            echo "Mac OS"
+            echo "macOS"
             ;;
         CYGWIN*|MINGW32*|MSYS*|MINGW*)
             echo "Windows"
@@ -47,19 +47,19 @@ DetectOperatingSystem() {
 }
 
 arch=$(DetectArchitecture)
-operatingSystem=$(DetectOperatingSystem)
+os=$(DetectOperatingSystem)
 echo "Architecture: $arch"
 echo "Operating System: $operatingSystem"
 COMPILER=clang
 MAKE_OPTION=-j
 PROJECT=${1-"FFmpeg"}
+# PROJECT=FFmpeg
+# PROJECT=HelloWorld
+# PROJECT=Random
+# PROJECT=Test
+echo "make clean"
+make clean
 
-# Set the target
-# TARGET=FFmpeg
-# TARGET=HelloWorld
-# TARGET=Random
-# TARGET=Test
-
-make $MAKE_OPTION TARGET=$PROJECT COMPILER=$COMPILER ARCH=$arch OS="$operatingSystem"
+make $MAKE_OPTION TARGET=$PROJECT COMPILER=$COMPILER ARCH=$arch OS="$os"
 echo "Run $PROJECT"
 ./Output/$PROJECT

@@ -20,14 +20,14 @@ C_SOURCES =
 
 # SDK files
 C_INCLUDES += \
--I $(SDK_DIRECTORY)\
+-I $(SDK_DIRECTORY)
 
 C_SOURCES += \
 $(wildcard $(SDK_DIRECTORY)/*.c)
 
 # Libs files
 C_INCLUDES += \
--I $(LIBS_DIRECTORY)/libavutil
+-I $(LIBS_DIRECTORY)
 
 LIBS := -L$(LIBS_DIRECTORY)/libavutil -lavutil
 
