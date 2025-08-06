@@ -7,13 +7,18 @@
             "label": "HelloWorld",
             "type": "shell",
             "command": "./build.sh",
-            "args": ["HelloWorld"]
+            "args": [
+                "HelloWorld"
+            ]
         },
         {
             "label": "FFmpeg",
             "type": "shell",
             "command": "./build.sh",
-            "args": ["FFmpeg"]
+            "args": [
+                "FFmpeg"
+            ],
+            "problemMatcher": []
         }
     ]
 }
