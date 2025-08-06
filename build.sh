@@ -49,10 +49,10 @@ DetectOperatingSystem() {
 arch=$(DetectArchitecture)
 os=$(DetectOperatingSystem)
 echo "Architecture: $arch"
-echo "Operating System: $operatingSystem"
+echo "Operating System: $os"
 COMPILER=clang
 MAKE_OPTION=-j
-PROJECT=${1-"FFmpeg"}
+PROJECT=${1-"HelloWorld"}
 # PROJECT=FFmpeg
 # PROJECT=HelloWorld
 # PROJECT=Random

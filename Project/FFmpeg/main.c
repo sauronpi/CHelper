@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "Foundation.h"
 #include "libavutil/avutil.h"
 #include "libavutil/log.h"
