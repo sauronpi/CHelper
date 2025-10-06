@@ -58,11 +58,13 @@ dkms.conf
 .svn
 
 # VSCode
-.vscode/*
-!.vscode/tasks.json
+.vscode
 
-# Build
+# build
 Build/
-
-#Output
 Output/
+
+# clangd
+.cache
+.clangd
+compile_commands.json
