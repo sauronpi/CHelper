@@ -1,0 +1,10 @@
+BasedOnStyle: LLVM
+ColumnLimit: 100          #放宽列限制到100
+IndentWidth: 4            #保持缩进4空格
+TabWidth: 4
+UseTab: Never
+
+BinPackParameters: false  #形参是否尽量一行
+BinPackArguments: false   #实参是否尽量一行
+
+AllowShortFunctionsOnASingleLine: Empty #Empty仅允许空函数（函数体为空，如 void f() {}）被格式化为单行。
