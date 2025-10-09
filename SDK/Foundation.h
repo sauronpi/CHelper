@@ -1,10 +1,11 @@
 #ifndef FOUNDATION_H
 #define FOUNDATION_H
 #ifdef __cplusplus
- extern "C" {
-#endif 
+extern "C" {
+#endif
 
-#include "stdio.h"
+#include <stdbool.h>
+#include <stdio.h>
 
 int RandomWithRange(int fromNumber, int toNumer);
 
