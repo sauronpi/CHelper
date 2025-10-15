@@ -52,7 +52,7 @@ echo "Architecture: $arch"
 echo "Operating System: $os"
 COMPILER=clang
 MAKE_OPTION=-j
-PROJECT=${1-"HellSize"}
+PROJECT=${1-"HelloWorld"}
 # PROJECT=FFmpeg
 # PROJECT=HelloWorld
 # PROJECT=Random
