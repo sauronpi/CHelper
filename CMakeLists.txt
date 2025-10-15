@@ -4,19 +4,19 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # 设置目标名称，默认为HelloWorld
-# set(TARGET "HelloWorld" CACHE STRING "Target executable name")
 set(TARGET "HelloWorld" CACHE STRING "Target executable name")
 
 # 目录设置
 set(BUILD_DIRECTORY "Build")
-set(OUTPUT_DIRECTORY "Output")
+set(OUTPUT_DIRECTORY "../Output")
+set(ARCHIVE_DIRECTORY "Archive")
 set(SDK_DIRECTORY "SDK")
 set(LIBS_DIRECTORY "Libs")
 set(PROJECT_DIRECTORY "Project")
 
 # 设置输出目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${BUILD_DIRECTORY})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${ARCHIVE_DIRECTORY})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${BUILD_DIRECTORY})
 
 # 创建项目
@@ -39,8 +39,8 @@ include_directories(
 )
 
 # 设置库目录和链接库
-link_directories("${LIBS_DIRECTORY}/libavutil")
-link_libraries(avutil)
+# link_directories("${LIBS_DIRECTORY}/libavutil")
+# link_libraries(avutil)
 
 # 创建可执行文件
 add_executable(${TARGET} ${ALL_SOURCES})
