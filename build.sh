@@ -1,8 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
-# TARGET="HelloWorld"
-TARGET="SizeOfTest"
+# C Project
+PROJECT_LANGUAGE="C"
+TARGET="HelloWorld"
+# TARGET="Random"
+# TARGET="SizeOfTest"
+
+# CPP Project
+# PROJECT_LANGUAGE="CXX"
+# TARGET="FTXUI"
+
+echo "PROJECT_LANGUAGE: $PROJECT_LANGUAGE"
 echo "TARGET: $TARGET"
 
 BUILD_DIRECTORY="Build"
@@ -43,7 +52,7 @@ if ! command -v make &>/dev/null; then
 fi
 
 # 执行CMake配置和构建
-cmake .. -G "$CMAKE_GENERATOR" -DTARGET="$TARGET"
+cmake .. -G "$CMAKE_GENERATOR" -DPROJECT_LANGUAGE="$PROJECT_LANGUAGE" -DTARGET="$TARGET"
 if [ $? -ne 0 ]; then
   echo "CMake configuration failed"
   cd ..
@@ -60,9 +69,9 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-cd ..
+echo Run "Project/$TARGET/Output/$TARGET"
+"./Project/$TARGET/Output/$TARGET"
 
-echo "Run $TARGET"
-Output/"$TARGET"
+cd ..
 
 exit 0
