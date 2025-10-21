@@ -1,0 +1,13 @@
+If:
+  PathMatch: .*\.c
+CompileFlags:
+  Compiler: x86_64-w64-mingw32-gcc
+  Add: ["-I../headers", "-I$INCLUDE_PATH"] # These two arguments are not affecting anything; they just match my needs.
+
+---
+If:
+  PathMatch: .*\.cpp
+CompileFlags:
+  Compiler: x86_64-w64-mingw32-g++
+  Add: ["-I../headers", "-I$INCLUDE_PATH", "-I/usr/lib/gcc/x86_64-w64-mingw32/12-win32/include/c++", "-I/usr/lib/gcc/x86_64-w64-mingw32/12-win32/include/c++/x86_64-w64-mingw32", "-I/usr/lib/gcc/x86_64-w64-mingw32/12-win32/include/c++/backward"]
+---
