@@ -19,7 +19,7 @@ set(TARGET "HelloWorld" CACHE STRING "Target executable name")
 
 # 目录设置
 set(BUILD_DIRECTORY "Build")
-set(OUTPUT_DIRECTORY "Output")
+set(OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Output")
 set(ARCHIVE_DIRECTORY "Archive")
 set(SDK_DIRECTORY "SDK")
 set(LIBS_DIRECTORY "Libs")
