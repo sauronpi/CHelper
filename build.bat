@@ -67,7 +67,7 @@ if %errorlevel% neq 0 (
 
 cd ..
 
-echo Run %TARGET%
+echo Run Output\%TARGET%
 Output\%TARGET%
 
 endlocal
