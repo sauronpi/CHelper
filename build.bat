@@ -1,9 +1,14 @@
 @echo off
 setlocal enabledelayedexpansion
 
+set PROJECT_LANGUAGE="C"
 set TARGET=HelloWorld
 REM set TARGET=SizeOfTest
+REM set PROJECT_LANGUAGE="CXX"
+REM set TARGET=FTXUI
+
 echo TARGET: %TARGET% 
+echo PROJECT_LANGUAGE %CXX%
 
 set BUILD_DIRECTORY=Build
 set CMAKE_GENERATOR="MinGW Makefiles"
@@ -43,7 +48,7 @@ if %errorlevel% neq 0 (
 )
 
 REM 执行cmake配置和构建
-cmake .. -G %CMAKE_GENERATOR% -DTARGET=%TARGET%
+cmake .. -G %CMAKE_GENERATOR% -DTARGET=%TARGET% -DPROJECT_LANGUAGE=%PROJECT_LANGUAGE%
 if %errorlevel% neq 0 (
     echo CMake configuration failed
     cd ..
