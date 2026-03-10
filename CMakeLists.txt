@@ -23,7 +23,7 @@ set(OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Output")
 set(ARCHIVE_DIRECTORY "Archive")
 set(SDK_DIRECTORY "SDK")
 set(LIBS_DIRECTORY "Libs")
-set(PROJECT_DIRECTORY "Project")
+set(TARGET_DIRECTORY "Target")
 
 # 设置输出目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
@@ -35,8 +35,8 @@ project(${TARGET} ${PROJECT_LANGUAGE})
 #收集源文件 - 分别收集C和C++文件然后合并
 file(GLOB SDK_C_SOURCES "${SDK_DIRECTORY}/*.c")
 file(GLOB SDK_CPP_SOURCES "${SDK_DIRECTORY}/*.cpp")
-file(GLOB PROJECT_C_SOURCES "${PROJECT_DIRECTORY}/${TARGET}/*.c")
-file(GLOB PROJECT_CPP_SOURCES "${PROJECT_DIRECTORY}/${TARGET}/*.cpp")
+file(GLOB PROJECT_C_SOURCES "${TARGET_DIRECTORY}/${TARGET}/*.c")
+file(GLOB PROJECT_CPP_SOURCES "${TARGET_DIRECTORY}/${TARGET}/*.cpp")
 
 # 合并所有源文件
 set(ALL_SOURCES
@@ -59,7 +59,7 @@ endif()
 include_directories(
     ${SDK_DIRECTORY}
     ${LIBS_DIRECTORY}
-    "${PROJECT_DIRECTORY}/${TARGET}"
+    "${TARGET_DIRECTORY}/${TARGET}"
 )
 
 # 设置库目录和链接库
@@ -67,7 +67,7 @@ include_directories(
 # link_libraries(avutil)
 
 # 根据目标添加对应的项目
-add_subdirectory("${PROJECT_DIRECTORY}/${TARGET}")
+add_subdirectory("${TARGET_DIRECTORY}/${TARGET}")
 
 # 确保输出到指定目录
 set_target_properties(${TARGET} PROPERTIES

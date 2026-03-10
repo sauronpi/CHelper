@@ -1,16 +1,25 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set PROJECT_LANGUAGE="C"
-set TARGET=HelloWorld
-REM set TARGET=SizeOfTest
+REM Project Language
+REM set PROJECT_LANGUAGE="C"
 REM set PROJECT_LANGUAGE="CXX"
+set "PROJECT_LANGUAGE=%~1"
+if "%PROJECT_LANGUAGE%"=="" set "PROJECT_LANGUAGE=C"
+
+REM C Target
+REM set TARGET=HelloWorld
+REM set TARGET=Random
+REM set TARGET=SizeOfTest
+REM CXX Target
 REM set TARGET=FTXUI
+set "TARGET=%~2"
+if "%TARGET%"=="" set "TARGET=HelloWorld"
 
 echo TARGET: %TARGET% 
 echo PROJECT_LANGUAGE %CXX%
 
-set BUILD_DIRECTORY=Build
+set BUILD_DIRECTORY="Build"
 set CMAKE_GENERATOR="MinGW Makefiles"
 echo BUILD_DIRECTORY: %BUILD_DIRECTORY%
 echo CMAKE_GENERATOR: %CMAKE_GENERATOR%

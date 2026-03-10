@@ -1,15 +1,20 @@
 #!/bin/bash
 set -euo pipefail
 
-# C Project
-PROJECT_LANGUAGE="C"
-TARGET="HelloWorld"
+# C Project language
+# PROJECT_LANGUAGE="C"
+# PROJECT_LANGUAGE="CXX"
+PROJECT_LANGUAGE="${1:-C}"
+
+# C Target
+# TARGET="HelloWorld"
 # TARGET="Random"
 # TARGET="SizeOfTest"
 
-# CPP Project
-# PROJECT_LANGUAGE="CXX"
+# CXX Target
 # TARGET="FTXUI"
+TARGET="${2:-HelloWorld}"
+
 
 echo "PROJECT_LANGUAGE: $PROJECT_LANGUAGE"
 echo "TARGET: $TARGET"
@@ -69,9 +74,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo Run "Project/$TARGET/Output/$TARGET"
-"./Project/$TARGET/Output/$TARGET"
-
 cd ..
+
+echo Run "Output/$TARGET"
+pwd
+./Output/$TARGET
 
 exit 0
